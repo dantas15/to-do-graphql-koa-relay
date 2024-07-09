@@ -2,10 +2,10 @@ import { createLoader } from '@entria/graphql-mongo-helpers';
 
 import { registerLoader } from '@/modules/loader/loaderRegister';
 
-import { Todo as TodoModel } from './todo-model';
+import { Todo } from './todo-model';
 
 const { Wrapper, getLoader, clearCache, load, loadAll } = createLoader({
-  model: TodoModel,
+  model: Todo,
   loaderName: 'TodoLoader',
 });
 
