@@ -2,9 +2,9 @@ import { GraphQLList, GraphQLObjectType, GraphQLString } from 'graphql';
 import { connectionDefinitions, globalIdField } from 'graphql-relay';
 import { nodeInterface, registerTypeLoader } from '@/modules/node/typeRegister';
 import { IAttachment, ITodo } from './todo-model';
-const AttachmentType = new GraphQLObjectType<IAttachment>({
+import { TodoLoader } from './todo-loader';
 
-const AttachmentType = new GraphQLObjectType({
+const AttachmentType = new GraphQLObjectType<IAttachment>({
   name: 'Attachment',
   description: 'Represents an attachment file',
   fields: () => ({
@@ -64,5 +64,7 @@ const TodoConnection = connectionDefinitions({
   name: 'Todo',
   nodeType: TodoType,
 });
+
+registerTypeLoader(TodoType, TodoLoader.load);
 
 export { TodoType, TodoConnection };
