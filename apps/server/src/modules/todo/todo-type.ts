@@ -1,6 +1,8 @@
 import { GraphQLList, GraphQLObjectType, GraphQLString } from 'graphql';
 import { connectionDefinitions, globalIdField } from 'graphql-relay';
-import { nodeInterface } from '@/modules/node/typeRegister';
+import { nodeInterface, registerTypeLoader } from '@/modules/node/typeRegister';
+import { IAttachment, ITodo } from './todo-model';
+const AttachmentType = new GraphQLObjectType<IAttachment>({
 
 const AttachmentType = new GraphQLObjectType({
   name: 'Attachment',
@@ -17,7 +19,7 @@ const AttachmentType = new GraphQLObjectType({
   }),
 });
 
-const TodoType = new GraphQLObjectType({
+const TodoType = new GraphQLObjectType<ITodo>({
   name: 'Todo',
   description: 'Represents a to-do item',
   fields: () => ({
