@@ -1,7 +1,7 @@
 import { GraphQLObjectType, GraphQLTypeResolver } from 'graphql';
 import { fromGlobalId, nodeDefinitions } from 'graphql-relay';
 
-type Load = (context: unknown, id: string) => unknown;
+type Load = (context: any, id: string) => unknown;
 type TypeLoaders = {
   [key: string]: {
     type: GraphQLObjectType;
@@ -23,7 +23,7 @@ const getTypeRegister = () => {
   };
 
   const { nodeField, nodesField, nodeInterface } = nodeDefinitions(
-    (globalId: string, context: unknown) => {
+    (globalId: string, context: any) => {
       const { type, id } = fromGlobalId(globalId);
 
       const { load } = typesLoaders[type] || { load: null };
