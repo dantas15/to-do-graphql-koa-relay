@@ -41,18 +41,18 @@ const Schema = new mongoose.Schema<ITodo>(
   }
 );
 
-type ITodo = {
+export type ITodo = {
   title: string;
   description: string;
   createdAt: Date;
   updatedAt: Date;
   dueDate?: Date;
-  attachments?: Attachment[];
+  attachments?: IAttachment[];
   doneAt?: Date;
   deletedAt?: Date;
 } & Document;
 
-type Attachment = {
+export type IAttachment = {
   fileName: string;
   fileUrl: string;
 };
