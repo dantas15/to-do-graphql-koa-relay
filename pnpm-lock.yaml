@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  graphql-relay@0.10.1:
+    hash: 2qpwzrp4qoveycguabnx4djyme
+    path: patches/graphql-relay@0.10.1.patch
+
 importers:
 
   .:
@@ -16,7 +21,7 @@ importers:
     dependencies:
       '@entria/graphql-mongo-helpers':
         specifier: ^1.1.2
-        version: 1.1.2(dataloader@2.2.2)(graphql-relay@0.10.1(graphql@16.9.0))(graphql@16.9.0)(mongoose@8.4.4)
+        version: 1.1.2(dataloader@2.2.2)(graphql-relay@0.10.1(patch_hash=2qpwzrp4qoveycguabnx4djyme)(graphql@16.9.0))(graphql@16.9.0)(mongoose@8.4.4)
       dotenv-safe:
         specifier: ^9.1.0
         version: 9.1.0(dotenv@16.4.5)
@@ -25,7 +30,7 @@ importers:
         version: 16.9.0
       graphql-relay:
         specifier: ^0.10.1
-        version: 0.10.1(graphql@16.9.0)
+        version: 0.10.1(patch_hash=2qpwzrp4qoveycguabnx4djyme)(graphql@16.9.0)
       kcors:
         specifier: ^2.2.2
         version: 2.2.2
@@ -816,18 +821,18 @@ packages:
 
 snapshots:
 
-  '@entria/graphql-mongo-helpers@1.1.2(dataloader@2.2.2)(graphql-relay@0.10.1(graphql@16.9.0))(graphql@16.9.0)(mongoose@8.4.4)':
+  '@entria/graphql-mongo-helpers@1.1.2(dataloader@2.2.2)(graphql-relay@0.10.1(patch_hash=2qpwzrp4qoveycguabnx4djyme)(graphql@16.9.0))(graphql@16.9.0)(mongoose@8.4.4)':
     dependencies:
-      '@entria/graphql-mongoose-loader': 4.4.0(graphql-relay@0.10.1(graphql@16.9.0))(graphql@16.9.0)(mongoose@8.4.4)
+      '@entria/graphql-mongoose-loader': 4.4.0(graphql-relay@0.10.1(patch_hash=2qpwzrp4qoveycguabnx4djyme)(graphql@16.9.0))(graphql@16.9.0)(mongoose@8.4.4)
       dataloader: 2.2.2
       graphql: 16.9.0
-      graphql-relay: 0.10.1(graphql@16.9.0)
+      graphql-relay: 0.10.1(patch_hash=2qpwzrp4qoveycguabnx4djyme)(graphql@16.9.0)
       mongoose: 8.4.4
 
-  '@entria/graphql-mongoose-loader@4.4.0(graphql-relay@0.10.1(graphql@16.9.0))(graphql@16.9.0)(mongoose@8.4.4)':
+  '@entria/graphql-mongoose-loader@4.4.0(graphql-relay@0.10.1(patch_hash=2qpwzrp4qoveycguabnx4djyme)(graphql@16.9.0))(graphql@16.9.0)(mongoose@8.4.4)':
     dependencies:
       graphql: 16.9.0
-      graphql-relay: 0.10.1(graphql@16.9.0)
+      graphql-relay: 0.10.1(patch_hash=2qpwzrp4qoveycguabnx4djyme)(graphql@16.9.0)
       mongoose: 8.4.4
 
   '@esbuild/aix-ppc64@0.21.5':
@@ -1172,7 +1177,7 @@ snapshots:
     dependencies:
       get-intrinsic: 1.2.4
 
-  graphql-relay@0.10.1(graphql@16.9.0):
+  graphql-relay@0.10.1(patch_hash=2qpwzrp4qoveycguabnx4djyme)(graphql@16.9.0):
     dependencies:
       graphql: 16.9.0
 

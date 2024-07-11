@@ -1,0 +1,13 @@
+diff --git a/mutation/mutation.d.ts b/mutation/mutation.d.ts
+index 50be6ce5e169a46a6ea84dbcf18a18ae50a8ef7f..cb8b7eab5944e24f0438d33e80b20043aacfcf05 100644
+--- a/mutation/mutation.d.ts
++++ b/mutation/mutation.d.ts
+@@ -31,7 +31,7 @@ interface MutationConfig<TInput = any, TOutput = unknown, TContext = any> {
+   extensions?: GraphQLFieldExtensions<any, any>;
+   inputFields: ThunkObjMap<GraphQLInputFieldConfig>;
+   outputFields: ThunkObjMap<GraphQLFieldConfig<TOutput, TContext>>;
+-  mutateAndGetPayload: MutationFn<TInput, TOutput, TContext>;
++  mutateAndGetPayload: MutationFn<TInput, Promise<TOutput> | TOutput, TContext>;
+ }
+ /**
+  * Returns a GraphQLFieldConfig for the mutation described by the
