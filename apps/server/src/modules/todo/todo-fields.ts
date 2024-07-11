@@ -6,7 +6,7 @@ export const todoField = (key: string) => ({
   [key]: {
     type: TodoType,
     resolve: async (obj: Record<string, unknown>, _: any, context: any) =>
-      TodoLoader.load(context, obj.message as string),
+      await TodoLoader.load(context, obj[key] as string),
   },
 });
 
@@ -16,8 +16,7 @@ export const todoConnectionField = (key: string) => ({
     args: {
       ...connectionArgs,
     },
-    resolve: async (_: any, args: any, context: any) => {
-      return await TodoLoader.loadAll(context, args);
-    },
+    resolve: (_: any, args: any, context: any) =>
+      TodoLoader.loadAll(context, args),
   },
 });
