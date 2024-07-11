@@ -43,7 +43,7 @@ const Schema = new mongoose.Schema<ITodo>(
 
 export type ITodo = {
   title: string;
-  description: string;
+  description?: string;
   createdAt: Date;
   updatedAt: Date;
   dueDate?: Date;
