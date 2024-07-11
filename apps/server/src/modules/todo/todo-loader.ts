@@ -4,12 +4,14 @@ import { registerLoader } from '@/modules/loader/loaderRegister';
 
 import { Todo } from './todo-model';
 
+const loaderName = 'TodoLoader';
+
 const { Wrapper, getLoader, clearCache, load, loadAll } = createLoader({
   model: Todo,
-  loaderName: 'TodoLoader',
+  loaderName,
 });
 
-registerLoader('TodoLoader', getLoader);
+registerLoader(loaderName, getLoader);
 
 export const TodoLoader = {
   Todo: Wrapper,

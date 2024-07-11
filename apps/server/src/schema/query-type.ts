@@ -7,17 +7,17 @@ import { connectionArgs } from 'graphql-relay';
 
 export const QueryType = new GraphQLObjectType({
   name: 'Query',
+  description: 'Queries',
   fields: () => ({
     node: nodeField,
     nodes: nodesField,
-    // todo: {},
     todos: {
       type: TodoConnection.connectionType,
       args: {
         ...connectionArgs,
       },
       resolve: async (_, args, context: GraphQLContext) =>
-        await TodoLoader.loadAll(),
+        await TodoLoader.loadAll(context, args),
     },
   }),
 });
