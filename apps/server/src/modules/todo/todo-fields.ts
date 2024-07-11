@@ -16,7 +16,7 @@ export const todoConnectionField = (key: string) => ({
     args: {
       ...connectionArgs,
     },
-    resolve: (_: any, args: any, context: any) =>
-      TodoLoader.loadAll(context, args),
+    resolve: async (_: any, args: any, context: any) =>
+      await TodoLoader.loadAll(context, args),
   },
 });
