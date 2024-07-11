@@ -1,5 +1,6 @@
 import type { Document, Model } from 'mongoose';
 import mongoose from 'mongoose';
+import { ObjectId } from 'mongoose';
 
 const Schema = new mongoose.Schema<ITodo>(
   {
@@ -42,6 +43,7 @@ const Schema = new mongoose.Schema<ITodo>(
 );
 
 export type ITodo = {
+  _id: ObjectId;
   title: string;
   description?: string;
   createdAt: Date;
